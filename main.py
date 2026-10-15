@@ -173,6 +173,9 @@ def pagina_login():
 @app.route('/abrir_dia-trabalhado')
 def abrir_dia_trabalhado():
     return render_template('calcular_dia_trabalhado.html')
+@app.route('/categoria')
+def categoria():
+    return render_template('mostrar_categoria.html')
 
 @app.route('/login', methods=['POST'])
 def login():

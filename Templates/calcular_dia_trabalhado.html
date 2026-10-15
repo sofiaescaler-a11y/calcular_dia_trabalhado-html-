@@ -57,11 +57,12 @@
         </a>
     </aside>
     <div class="conteudo_dia_trab">
+        <!--Lembrar de mudar essa parte para deixar o nome e email do usuario-->
         <div class="perfil">
             <img src="static/uploads/perfil-usuario-topo.png">
             <div class="nome_email">
-                <span>nome_usuario</span>
-                <span>email_usuario</span>
+                <span class="nome">nome_usuario</span>
+                <span class="email">email_usuario</span>
             </div>
         </div>
         <div class="linha"></div>
@@ -72,7 +73,7 @@
         </div>
         <main>
             <div class="infromacao_tabela">
-                <img src="static/uploads/calendar.png" alt="">
+                <img src="static/uploads/calendario_dia_trab.png" alt="">
                 <div class="texto_inform">
                     <h2>Registrar Dia Trabalhado</h2>
                     <p>Preencha as informações abaixo para registrar o dia trabalhado.</p>
@@ -82,7 +83,7 @@
 
             <form method="POST">
 
-                <!--perguntar para o igor como que coloca uma imagem no campo do input-->
+
                 <div class="campo">
                     <label>Data</label>
                     <div class="campo_data">
@@ -90,9 +91,12 @@
                     </div>
                 </div>
 
-                <div class="campo">
+                <div class="campo2">
                     <label>Pacotes Coletados</label>
-                    <input id="data_dia_trabalhado" type="number" name="dia_trabalhado" placeholder="Digite a quantidade de pacotes" required>
+                    <div class="campo_pacote">
+                        <input id="data_dia_trabalhado" type="number" name="qantidade_pacotes" placeholder="Digite a quantidade de pacotes" required>
+                        <img src="static/uploads/Icone de caixa.png" alt="">
+                    </div>
                 </div>
 
                 <div class="botao">
