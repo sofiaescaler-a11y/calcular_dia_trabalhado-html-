@@ -58,6 +58,7 @@ body {
 .conteudo_dia_trab{
     display: inline;
 }
+
 .perfil{
     display: flex;
     gap: 10px;
@@ -92,7 +93,6 @@ body {
 .conteudo_dia_trab{
     flex: 1;
     min-width: 0;
-    max-width: 1000px;
     padding: 0 20px 20px;
 }
 .informacao_categoria {
@@ -114,50 +114,100 @@ main{
     background-color: var(--branco);
     margin: 20px;
     border-radius: 25px;
-    padding: 20px;
-    width: 96%;
+    padding: 10px;
+    width: 95%;
     border: 1px solid var(--cinza-claro);
 }
 .informacao_movimentacao{
     display: flex;
-    gap: 90px;
+    gap: 40px;
     margin-left: 20px;
 }
+.campo_valor input[type="number"]::-webkit-inner-spin-button,
+.campo_valor input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.campo_data input[type="date"]::-webkit-calendar-picker-indicator {
+    display:none;
+}
+input,
+select{
+    width: 100%;
+    height: 51px;
+    padding: 0 12px;
+    border: 1px solid var(--cinza);
+    border-radius: 9px;
+    background-color: var(--branco);
+    color: var(--azul-cinzento-escuro);
+    font-size: 14px;
+    outline: none;
+}
+.campo_valor input {
+    width: 100%;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.tipo,
+.categoria{
+ width: 200px;
+}
+.campo_descricao input{
+    height: 220px;
+    margin-left: 20px;
+    width: 98%;
 
-.infromacao_tabela {
+}
+.informacao_movimentacao select{
+    width: 100%;
+}
+
+.campo_valor,
+.campo_data{
+    width: 100%;
+    height: 51px;
     display: flex;
+    overflow: hidden;
+    border: 1px solid var(--cinza);
+    border-radius: 9px;
+    background-color: var(--branco);
 }
-.infromacao_tabela img {
-    width: 65px;
-    height: 65px;
+.campo_valor input,
+.campo_data input{
+    width: 100%;
+    padding: 0 12px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.campo_valor strong,
+.campo_data img{
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cinza-claro);
+    color: var(--cinza-escuro);
+}
+.campo_data img{
+    height: 50px;
+    width: 50px;
     padding: 10px;
-    border-radius: 10px;
-    background-color: var(--verde-clarinho);
-    margin-right: 20px;
 }
+
+
 .texto_inform h2{
     font-size: 30px;
 }
-.texto_inform p{
-    padding-top:10px ;
-}
+
 form{
     margin-top: 50px;
 }
 form label{
     font-size: 25px;
     font-weight: bold;
-}
-form input{
-    height: 52px;
-    color: var(--cinza);
-    border-radius: 10px;
-
-}
-form .campo input{
-    width: 100%;
-    border: 1px solid var(--cinza-claro);
-
 }
 
 form button{
@@ -185,7 +235,7 @@ form .botao{
 
 }
 
-/* Responsivo tablet
+/* Responsivo tablet*/
 @media (max-width: 768px) {
     .body{
         min-height: 100vh;
@@ -209,9 +259,18 @@ form .botao{
     .recepcao_usuario{
         align-items: center;
     }
+    .informacao_movimentacao{
+    display: block;
+    gap: 40px;
+    margin-left: 20px;
+    }
+    .tipo,
+    .categoria{
+        width: 390px;
+    }
 
 }
- /*responsivo celular
+ /*responsivo celular*/
 @media(max-width: 600px){
     .menu-lateral,
     .linha{
@@ -226,7 +285,9 @@ form .botao{
         margin: 20px;
         padding: 20px;
     }
+    .informacao_movimentacao select{
 
+    }
 
     .body{
         min-height: 100vh;
@@ -260,7 +321,16 @@ form .botao{
         position: absolute;
         left: 40px;
     }
-
+    .informacao_movimentacao{
+        margin-right: 30px;
+    }
+    .descricao{
+        margin-right: 30px;
+    }
+    .tipo,
+    .categoria{
+        width: 300px;
+    }
     .conteudo_dia_trab {
         display: flex;
         flex-direction: column;

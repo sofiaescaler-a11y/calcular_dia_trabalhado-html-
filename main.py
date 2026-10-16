@@ -173,6 +173,9 @@ def pagina_login():
 @app.route('/editar_movimentacao')
 def editar_movimentacao():
     return render_template('editar_movimentacao.html')
+@app.route('/editar_movimentacao2')
+def editar_movimentacao2():
+    return render_template('editar_movimentacao2.html')
 
 @app.route('/abrir_dia-trabalhado')
 def abrir_dia_trabalhado():

@@ -57,22 +57,26 @@
         </a>
     </aside>
     <div class="conteudo_dia_trab">
-        <!--Lembrar de mudar essa parte para deixar o nome e email do usuario-->
-        <div class="topo_celular">
-            <img src="static/uploads/Botão de voltar ( _ ).png" class="voltar">
+        <header class="topo-celular">
             <div class="logo_celular"></div>
-            <div class="perfil">
-            <img src="static/uploads/perfil-usuario-topo.png">
-            <div class="nome_email">
-                <span class="nome">nome_usuario</span>
-                <span class="email">email_usuario</span>
-            </div>
-        </div>
+            <div></div>
 
-        </div>
+            <a href="{{ url_for('perfil') }}" class="usuario-logado">
+                {% if usuario[9] %}
+                    <img src="{{ url_for('static', filename='Uploads/' + usuario[9]) }}" alt="Foto do usuário">
+                {% else %}
+                    <img src="{{ url_for('static', filename='Uploads/perfil-usuario-topo.png') }}" alt="Foto padrão">
+                {% endif %}
+                <div>
+                    <strong>{{ usuario[0].split()[:2] | join(' ') }}</strong>
+                    <span>{{ usuario[1] }}</span>
+                </div>
+            </a>
+        </header>
+
         <div class="linha"></div>
         <div class="recepcao_usuario">
-            <p>Olá, <span>nome_usuario</span></p>
+            <p>Olá, {{ usuario[0].split()[:2] | join(' ') }}!</p>
             <h2>Registrar Dia Trabalhado</h2>
             <p>Informe a data e a quantidade de pacotes recebidos no dia.</p>
         </div>
@@ -83,30 +87,33 @@
                     <h2>Registrar Dia Trabalhado</h2>
                     <p>Preencha as informações abaixo para registrar o dia trabalhado.</p>
                 </div>
-
             </div>
 
-            <form method="POST">
+            {% with mensagens = get_flashed_messages(with_categories=true) %}
+            {% for categoria, mensagem in mensagens %}
+                <p class="mensagem {{ categoria }}">{{ mensagem }}</p>
+            {% endfor %}
+        {% endwith %}
 
+            <form action="{{ url_for('cadastrar_dia_trabalhado') }}" method="POST">
 
                 <div class="campo">
                     <label>Data</label>
                     <div class="campo_data">
-                        <input id="data_dia_trabalhado" type="date" name="dia_trabalhado" required>
+                        <input type="date" name="data" min="0.01" step="0.01" required>
                     </div>
                 </div>
 
                 <div class="campo2">
                     <label>Pacotes Coletados</label>
                     <div class="campo_pacote">
-                        <input id="data_dia_trabalhado" type="number" name="qantidade_pacotes" placeholder="Digite a quantidade de pacotes" required>
+                        <input type="number" name="pacotes" min="0.01" step="0.01" placeholder="Digite a quantidade de pacotes" required>
                         <img src="static/uploads/Icone de caixa.png" alt="">
                     </div>
                 </div>
-
                 <div class="botao">
-                    <button type="reset" class="cancelar">Cancelar</button>
-                    <button type="submit" class="registrar">Registrar</button>
+                    <a href="{{ url_for('dashboard') }}" class="cancelar">Cancelar</a>
+                    <button type="submit" class="registrar-movimentacao">Registrar</button>
                 </div>
             </form>
         </main>
