@@ -226,7 +226,9 @@ form .botao{
     .saudacao {
         display: none;
     }
-
+    .topo_celular{
+        display: flex;
+    }
     .body{
         min-height: 100vh;
     }
@@ -245,7 +247,9 @@ form .botao{
         background-image: url('../uploads/logo-horizontal.png');
         height: 62px;
         width: 185px;
-
+        display: block;
+        background-size: contain;
+        margin-top: 10px;
     }
     .linha{
         width: 90%;
