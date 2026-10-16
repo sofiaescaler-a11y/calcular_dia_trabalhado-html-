@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar movimentação</title>
+    <link rel="icon" href="{{ url_for('static', filename='uploads/logo-escuro.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editar_movimentacao.css') }}">
+    <script src="{{ url_for('static', filename='js/alteracao_foto.js') }}" defer></script>
+
+</head>
+<body>
+<aside class="menu-lateral">
+    <img class="logo-perfil" src="static/uploads/logo-horizontal.png" alt="Bolso em Dia">
+
+    <nav class="navegacao-perfil">
+        <a  href="{{ url_for('dashboard') }}">
+            <img src="static/uploads/perfil-dashboard.png" alt="">
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-rendimentos.png" alt="">
+            <span>Rendimentos</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-despesas.png" alt="">
+            <span>Despesas</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-dia-trabalhado.png" alt="">
+            <span>Dia Trabalhado</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-servico-extra.png" alt="">
+            <span>Serviço Extra</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-relatorios.png" alt="">
+            <span>Relatórios</span>
+        </a>
+
+        <a href="#">
+            <img src="static/uploads/perfil-historico.png" alt="">
+            <span>Histórico Semanal</span>
+        </a>
+    </nav>
+
+    <a class="sair-perfil"  href="{{ url_for('logout') }}">
+        <img src="static/uploads/perfil-sair.png" alt="">
+        <span>Sair</span>
+    </a>
+</aside>
+<div class="conteudo_dia_trab">
+    <!--Lembrar de mudar essa parte para deixar o nome e email do usuario-->
+    <div class="topo_celular">
+        <img src="static/uploads/Botão de voltar ( _ ).png" class="voltar">
+        <div class="logo_celular"></div>
+        <div class="perfil">
+            <img src="static/uploads/perfil-usuario-topo.png">
+            <div class="nome_email">
+                <span class="nome">nome_usuario</span>
+                <span class="email">email_usuario</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="linha"></div>
+    <div class="recepcao_usuario">
+        <p>Olá, <span>nome_usuario</span></p>
+        <h2>Editar Movimentação</h2>
+        <p>Registre uma nova movimentação.</p>
+    </div>
+    <main>
+
+        <form method="POST">
+            <div class="informacao_movimentacao">
+                <div class="valor">
+                    <label>Valor recebido</label>
+                    <div class="campo_valor">
+                        <p>R$</p>
+                        <input id="valor" type="number" name="valor" required>
+                    </div>
+                </div>
+
+                <div class="tipo">
+                    <label>Tipo</label>
+                    <div class="campo_tipo">
+                        <select>
+                            <option>Despesa</option>
+                            <option>Receita</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="data">
+                    <label>Data</label>
+                    <div class="campo_data">
+                        <input id="data" type="date" name="data" required>
+                    </div>
+                </div>
+                <!-- Depois perguntar para alguem sobre as categorias-->
+                <div class="categoria">
+                    <label>Categoria</label>
+                    <div class="campo_categoria">
+                        <select>
+                            <option>Alimentação</option>
+                            <option>Supermercado</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="descricao">
+                <label>Descrição da movimentação</label>
+                <div class="campo_descricao">
+                    <input id="descricao" type="text" name="descricao" required>
+                </div>
+            </div>
+
+            <div class="botao">
+                <button type="reset" class="cancelar">Cancelar</button>
+                <button type="submit" class="alterar">Salvar Alterações</button>
+            </div>
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

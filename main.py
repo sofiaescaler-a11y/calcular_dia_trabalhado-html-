@@ -170,6 +170,10 @@ def cadastrar_informacoes():
 def pagina_login():
     return render_template('login.html')
 
+@app.route('/editar_movimentacao')
+def editar_movimentacao():
+    return render_template('editar_movimentacao.html')
+
 @app.route('/abrir_dia-trabalhado')
 def abrir_dia_trabalhado():
     return render_template('calcular_dia_trabalhado.html')
