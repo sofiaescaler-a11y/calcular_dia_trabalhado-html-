@@ -17,7 +17,7 @@ app = Flask(__name__, static_folder='Static', template_folder='Templates', stati
 app.config['SECRET_KEY'] = 'chave_secreta_bolso_em_dia'
 
 host = "localhost"
-database = r"C:\Users\User\Downloads\calcular_dia_trabalhado-html--main\calcular_dia_trabalhado-html--main\BANCO.FDB"
+database = r"C:\Users\Aluno\Downloads\calcular_dia_trabalhado-html--main\calcular_dia_trabalhado-html--main\BANCO.FDB"
 user = "sysdba"
 password = "sysdba"
 
