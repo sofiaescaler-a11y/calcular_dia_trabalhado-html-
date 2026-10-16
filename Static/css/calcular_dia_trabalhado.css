@@ -76,15 +76,21 @@ body {
 .linha {
     margin-left: 60px;
     margin-right: auto;
-    width: 900px;
+    width: 90%;
     height: 1px;
     background-color: var(--cinza-claro);
 }
 .conteudo-perfil {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Faz o conteúdo ocupar todo o espaço restante ao lado do menu */
-    padding: 20px; /* Adiciona um espaço interno para não colar nas bordas */
+    flex: 1;
+    padding: 20px;
+}
+.conteudo_dia_trab{
+    flex: 1;
+    min-width: 0;
+    max-width: 1000px;
+    padding: 0 20px 20px;
 }
 .informacao_categoria {
     display: flex;
@@ -205,8 +211,152 @@ form .botao{
         height: 45px;
         width: 45px;
         border-radius: 100px;
-
+    }
+    main{
+        width: 90%;
+    }
+    .recepcao_usuario{
+        align-items: center;
     }
 
+}
+/*responsivo celular*/
+@media(max-width: 425px){
+    .menu-lateral,
+    .saudacao {
+        display: none;
+    }
 
+    .body{
+        min-height: 100vh;
+    }
+    .perfil .nome_email{
+        display:none;
+    }
+    .perfil{
+        background-color: var(--verde-escuro);
+        height: 45px;
+        width: 45px;
+        border-radius: 100px;
+        margin-left: 250px;
+
+    }
+    .logo_celular{
+        background-image: url('../uploads/logo-horizontal.png');
+        height: 62px;
+        width: 185px;
+
+    }
+    .linha{
+        width: 90%;
+        margin: 10px;
+    }
+
+    .conteudo_dia_trab {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh;
+        max-width: none;
+        padding: 0 16px 16px;
+    }
+
+    .topo-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+    }
+
+    .topo-mobile .voltar,
+    .topo-mobile .avatar {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+    }
+
+    .topo-mobile .voltar {
+        color: var(--azul-cinzento-escuro);
+    }
+
+    .topo-mobile .logo {
+        height: 36px;
+    }
+
+    .topo-mobile .avatar {
+        border-radius: 50%;
+        background-color: var(--verde-escuro);
+        color: var(--branco);
+        font-weight: bold;
+    }
+
+    .recepcao_usuario {
+        margin: 8px 0 16px;
+    }
+
+    .recepcao_usuario h2 {
+        font-size: 26px;
+    }
+
+    .recepcao_usuario p {
+        font-size: 14px;
+    }
+
+    /* o card estica até o fim da tela */
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .informacao_tabela {
+        gap: 12px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--cinza-claro);   /* divisória do card */
+    }
+
+    .informacao_tabela img {
+        width: 48px;
+        height: 48px;
+        padding: 8px;
+    }
+    .texto_inform h2 {
+        font-size: 18px;
+    }
+    .texto_inform p {
+        padding-top: 4px;
+        font-size: 14px;
+    }
+
+    form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+    }
+    form label {
+        font-size: 16px;
+    }
+    form .campo2 {
+        margin-top: 20px;
+    }
+    .campo_data input,
+    .campo_pacote input {
+        height: 44px;
+    }
+    form .botao {
+        margin-top: auto;
+        padding-top: 32px;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+    form button {
+        flex: none;
+        width: 100%;
+    }
+}
 }
